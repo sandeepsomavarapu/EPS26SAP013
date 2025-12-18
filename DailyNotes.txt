@@ -1,0 +1,92 @@
+Database:
+========
+	Data
+text files
+
+1960
+EF CODD
+
+ACID
+
+
+Databse-->setup
+MYSQL
+tables-->rows/columns
+
+3306
+SQL->IBM
+
+connect
+
+
+create database cts1;
+use cts1;
+#SQL-->DDL,DML,DCL,TCL,DQL
+#DDL-->CREATE,ALTER,DROP,TRUNCATE,RENAME
+
+CREATE TABLE EMPLOYEES(eid int,ename varchar(15),esal decimal,edesg varchar(15));
+create table emp as select * from employees;#copy
+#to add cloumn
+alter table employees add column eaddress varchar(15);
+desc employees;
+#to delete column
+alter table employees drop column edesg;
+drop table employees;#to delete table 
+truncate table emp;
+rename table emp to employees;
+alter table employees change eid empno int;
+#DML  
+insert into employees values(1,'keerthi',9000,'CEO');
+insert into employees values(2,'vaishnavi',92000,'trainee');
+insert into employees values(3,'lavanya',98900,'admin');
+insert into employees values(4,'mahitha',92900,'hr');
+insert into employees values(5,'keerthana',92200,'admin');
+
+insert into employees(empno,ename) values(6,'suresh');
+-- insert into employees values(7,'naresh');
+
+update employees set esal=esal+1000;
+update employees set esal=esal+5000 where esal<30000;
+update employees set esal=esal+5000 where esal between 90000 and 94000;
+
+drop table employees;
+delete from employees;#truncate 
+truncate table employees;
+
+delete from employees where esal>90000;
+select *  from employees ;#DQL
+
+select empno,ename  from employees ;#DQL
+select empno,ename  from employees where ename like 'k%';#DQL
+select max(esal) from employees;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
